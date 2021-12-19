@@ -16,9 +16,11 @@ db.once("open", () => console.log("Connected to DB"));
 
 // Load routes resolvers
 const indexRouter = require("./routes/index");
+const authorsRouter = require("./routes/authors");
 
 // Routes
 app.use("/", indexRouter);
+app.use("/authors", authorsRouter);
 app.all("*", (req, res) =>
   res
     .status(404)

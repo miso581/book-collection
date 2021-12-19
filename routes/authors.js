@@ -4,9 +4,16 @@ const Author = require("../models/author");
 
 // Get all authors
 router.get("/", async (req, res) => {
+  let searchOptions = {};
+
+  if (req.query.firstName != null && req.query.firstName !== "") {
+    searchOptions.firstName = new RegExp(req.query.firstName, "i");
+  }
+  if (req.query.lastName != null && req.query.lastName !== "") {
+    searchOptions.lastName = new RegExp(req.query.lastName, "i");
+  }
   try {
-    let authors = await Author.find();
-    // let authors = await Author.find(searchOptions);
+    let authors = await Author.find(searchOptions);
     res.status(200).send({ data: authors });
   } catch (err) {
     console.log("ERR '/':", err);

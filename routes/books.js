@@ -4,8 +4,19 @@ const Book = require("../models/book");
 
 // Get all books
 router.get("/", async (req, res) => {
+  let searchOptions = {};
+
+  if (req.query.title != null && req.query.title !== "") {
+    searchOptions.title = new RegExp(req.query.title, "i");
+  }
+  if (req.query.description != null && req.query.description !== "") {
+    searchOptions.description = new RegExp(req.query.description, "i");
+  }
+  if (req.query.author != null && req.query.author !== "") {
+    searchOptions.author = req.query.author;
+  }
   try {
-    const books = await Book.find().populate("author").exec();
+    const books = await Book.find(searchOptions).populate("author").exec();
     res.status(200).send({ data: books });
   } catch (err) {
     res.status(500).send({

@@ -8,6 +8,13 @@ const bookSchema = new mongoose.Schema({
   description: {
     type: String,
   },
+  author: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      required: true,
+      ref: "Author",
+    },
+  ],
 });
 
 module.exports = mongoose.model("Book", bookSchema);

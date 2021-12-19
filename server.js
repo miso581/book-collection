@@ -3,12 +3,11 @@ if (process.env.NODE_ENV !== "production") {
   require("dotenv").config();
 }
 const express = require("express");
-const bodyParser = require("body-parser");
 
 // Config the app, include middlewares
 const app = express();
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(express.json());
+app.use(express.urlencoded());
 
 // Config DB connection
 const mongoose = require("mongoose");

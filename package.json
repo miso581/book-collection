@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/miso581/book-collection1.git"
+    "url": "git+https://github.com/miso581/book-collection.git"
   },
   "author": "Michal Kristofik",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/miso581/book-collection1/issues"
+    "url": "https://github.com/miso581/book-collection/issues"
   },
-  "homepage": "https://github.com/miso581/book-collection1#readme",
+  "homepage": "https://github.com/miso581/book-collection#readme",
   "dependencies": {
     "body-parser": "^1.19.1",
     "express": "^4.17.2",

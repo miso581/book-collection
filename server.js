@@ -7,7 +7,7 @@ const express = require("express");
 // Config the app, include middlewares
 const app = express();
 app.use(express.json());
-app.use(express.urlencoded());
+app.use(express.urlencoded({ extended: true }));
 
 // Config DB connection
 const mongoose = require("mongoose");

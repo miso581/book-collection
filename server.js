@@ -5,6 +5,7 @@ const bodyParser = require("body-parser");
 
 // Config the app, include middlewares
 const app = express();
+app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
 // Config DB connection
@@ -17,10 +18,12 @@ db.once("open", () => console.log("Connected to DB"));
 // Load routes resolvers
 const indexRouter = require("./routes/index");
 const authorsRouter = require("./routes/authors");
+const booksRouter = require("./routes/books");
 
 // Routes
 app.use("/", indexRouter);
 app.use("/authors", authorsRouter);
+app.use("/books", booksRouter);
 app.all("*", (req, res) =>
   res
     .status(404)

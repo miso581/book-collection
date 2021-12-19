@@ -10,7 +10,7 @@ Create a simple RESTful API server in Node.js for the book collection app. Each 
 
 ### Node.js
 
-Defined in the assignment.
+Requirement from the assignment.
 
 ### Express.js
 
@@ -22,7 +22,7 @@ I chose this framework because of its characteristics, ease of use, good mainten
 
 Choosing the right DB for a project is important since the decision needs to be made in the early stages of the development and the later switch to a different DB is costly, especially timewise.
 
-In this assignment, both SQL and NoSQL DBs would do the job well, and it does not matter that much which one is chosen. My choice, however, was a NoSQL DB - MongoDB. The reason for choosing NoSQL DB is the faster development and easier prototyping. Also, I wanted to challenge myself, since I'm using SQL DBs almost daily and wanted to get back to NoSQL DB. However, if this API was to be further expanded and used in production, I would probably go with SQL DB.
+In this assignment, both SQL and NoSQL DBs would do the job well, and it does not matter that much which one is chosen. My choice, however, was a NoSQL DB - MongoDB. The reason for choosing NoSQL DB is the faster development and easier prototyping. Also, I wanted to challenge myself, since I'm using SQL DBs almost daily and wanted to get back to NoSQL DB. However, if this API was to be further expanded and used in production, I would probably choose with SQL DB.
 
 MongoDB was chosen as a NoSQL DB, mainly for its easy deployment on the cloud, data structure, and previous experience. Also, it fits well the already chosen Express.js and Node.js in the MEAN stack.
 
@@ -66,11 +66,11 @@ The API is hosted at: https://my-book-collection-api.herokuapp.com/
 
 ### Book
 
-| Field       | Data type              | Required |
-| ----------- | ---------------------- | -------- |
-| title       | String                 | true     |
-| description | String                 | true     |
-| author      | ObjectId, ref - Author | true     |
+| Field       | Data type                | Required |
+| ----------- | ------------------------ | -------- |
+| title       | String                   | true     |
+| description | String                   | true     |
+| author      | [ObjectId], ref - Author | true     |
 
 ### Author
 
